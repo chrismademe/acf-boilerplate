@@ -1,0 +1,7 @@
+@function auto-color($color) {
+    @if (lightness($color) >= 61) {
+        @return map-get($colors, 'grey');
+    } @else {
+        @return white;
+    }
+}

@@ -1,0 +1,36 @@
+.card {
+    background-color: var(--color-white);
+    box-shadow: var(--size-1) var(--size-2) var(--size-3)
+        rgba(map-get($colors, 'black'), 0.2);
+    border-radius: 0.3rem;
+
+    display: flex;
+    flex-direction: column;
+
+    > *:first-child {
+        border-top-left-radius: 0.3rem;
+        border-top-right-radius: 0.3rem;
+    }
+}
+
+.card__image {
+    object-fit: cover;
+    object-position: center;
+    height: 12rem;
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: var(--size-4);
+}
+
+.card__content > p {
+    flex-grow: 1;
+}
+
+.card__actions {
+    border-top: 0.1rem solid var(--color-grey-300);
+    padding: var(--size-3) var(--size-4);
+}

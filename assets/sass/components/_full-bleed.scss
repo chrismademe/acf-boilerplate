@@ -1,0 +1,7 @@
+.breakout {
+    --breakout-width: 100vw;
+
+    width: var(--breakout-width);
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

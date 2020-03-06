@@ -1,0 +1,19 @@
+.flow {
+    --flow-space: var(--size-4);
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space);
+}
+
+.flow--tight {
+    --flow-space: var(--size-2);
+}
+
+.flow--mid {
+    --flow-space: var(--size-3);
+}
+
+.flow--loose {
+    --flow-space: var(--size-6);
+}

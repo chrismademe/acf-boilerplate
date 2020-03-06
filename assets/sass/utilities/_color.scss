@@ -1,0 +1,5 @@
+@each $key, $value in $colors {
+    .c-#{$key} {
+        color: $value;
+    }
+}

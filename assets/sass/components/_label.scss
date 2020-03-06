@@ -1,0 +1,14 @@
+.label {
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 1rem;
+    font-size: 0.8em;
+}
+
+@each $key, $value in $colors {
+    .label--#{$key} {
+        background-color: $value;
+        color: auto-color($value);
+    }
+}

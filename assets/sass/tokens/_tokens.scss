@@ -1,0 +1,83 @@
+$colors: (
+    'grey': #1f2021,
+    'grey-700': #51565a,
+    'grey-500': #969fa7,
+    'grey-300': #d0dae3,
+    'grey-100': #e7edf2,
+    'teal': #1bcbb0,
+    'teal-700': #26e2c5,
+    'teal-500': #49e7ce,
+    'teal-300': #71ecd9,
+    'teal-100': #9ff2e5,
+    'magenta': #ea1859,
+    'magenta-700': #ed3b72,
+    'magenta-500': #f1648f,
+    'magenta-300': #f593b1,
+    'magenta-100': #fac9d8,
+    'positive': #26ad6a,
+    'positive-700': #4bb982,
+    'positive-500': #76cba0,
+    'positive-300': #9fd9bc,
+    'positive-100': #d6f2e4,
+    'negative': #e0503e,
+    'negative-700': #e27062,
+    'negative-500': #e38e83,
+    'negative-300': #edbeb8,
+    'negative-100': #f7e6e4,
+    'white': white,
+    'black': black,
+    'neutral': #1a2683,
+    'twitter': #1da1f2,
+    'instagram': #f56040
+);
+
+$fonts: (
+    'base':
+        unquote(
+            '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+        Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol'
+        ),
+    'mono':
+        unquote(
+            '"JetBrains Mono", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace'
+        )
+);
+
+$sizeScale: (
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 1rem,
+    4: 1.5rem,
+    5: 2.25rem,
+    6: 3rem,
+    7: 4rem,
+    8: 5rem,
+    9: 6rem,
+    10: 8rem
+);
+
+$fontScale: (
+    '-2': var(--step--2),
+    '-1': var(--step--1),
+    0: var(--step-0),
+    1: var(--step-1),
+    2: var(--step-2),
+    3: var(--step-3),
+    4: var(--step-4),
+    5: var(--step-5),
+    6: var(--step-6)
+);
+
+:root {
+    @each $key, $value in $colors {
+        --color-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $fonts {
+        --font-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $sizeScale {
+        --size-#{$key}: #{$value};
+    }
+}

@@ -1,0 +1,12 @@
+.page-header {
+    background-color: var(--color-teal);
+    padding: var(--size-4);
+}
+
+@media (min-width: 20em) {
+    .page-header .container {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+}

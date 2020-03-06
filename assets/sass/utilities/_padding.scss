@@ -1,0 +1,13 @@
+@each $key, $value in $sizeScale {
+    .pad-#{$key} {
+        padding: $value;
+    }
+
+    .pad-top-#{$key} {
+        padding-block-start: $value;
+    }
+
+    .pad-left-#{$key} {
+        padding-block-end: $value;
+    }
+}

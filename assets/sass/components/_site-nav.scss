@@ -1,0 +1,29 @@
+.site-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > * + * {
+        margin-inline-start: var(--size-4);
+    }
+}
+
+.site-nav a {
+    color: var(--color-grey);
+    font-size: var(--step--1);
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+
+    @media (hover: hover) {
+        &:hover:after {
+            border-bottom: 0.2rem solid var(--color-neutral);
+            content: "";
+            display: block;
+            bottom: -0.4rem;
+            position: absolute;
+            width: 1rem;
+        }
+    }
+}

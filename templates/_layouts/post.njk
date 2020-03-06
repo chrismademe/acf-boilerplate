@@ -1,0 +1,46 @@
+{% include "page-head.njk" %}
+
+{% include "header.njk" %}
+
+<main id="main-content" class="post | container container--small | gap-top-8">
+    <header>
+        <section class="post__meta">
+            {% for tag in tags %}
+                <span class="label label--neutral | font-mono">{{ tag }}</span>
+            {% endfor %}
+        </section>
+
+        <h1 class="gap-top-3">{{ title }}</h1>
+
+        <section class="post__actions | pad-top-2">
+            <copy-button>
+                <button hidden class="btn btn--positive" type="button">
+                    {% include "icons/clipboard.svg" %}
+                    <span class="gap-left-2">Copy Template</span>
+                </button>
+            </copy-button>
+
+            <div class="c-grey-700 text--1 pad-top-2 gap-left-4">
+                {% include "icons/info.svg" %}
+                        In Chrome, paste using <kbd>Ctrl</kbd>
+                <kbd>Shift</kbd>
+                <kbd>V</kbd> to strip the formatting!
+                    </div>
+        </section>
+    </header>
+
+    <section id="content" class="flow | gap-top-4">
+        {{ content | safe }}
+    </section>
+
+    <section class="actions | gap-top-8">
+        <copy-button>
+            <button hidden class="btn btn--positive" type="button">
+                {% include "icons/clipboard.svg" %}
+                <span class="gap-left-2">Copy Template</span>
+            </button>
+        </copy-button>
+    </section>
+</main>
+
+{% include "page-footer.njk" %}

@@ -1,0 +1,5 @@
+@each $key, $value in $sizeScale {
+    .flow-space-#{$key} {
+        --flow-space: #{$value};
+    }
+}

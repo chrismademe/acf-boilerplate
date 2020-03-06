@@ -1,0 +1,5 @@
+@each $key, $value in $fonts {
+    .font-#{$key} {
+        font-family: $value;
+    }
+}

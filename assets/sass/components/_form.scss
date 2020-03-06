@@ -1,0 +1,55 @@
+.field > * + * {
+    --flow-space: var(--size-2);
+    margin-top: var(--flow-space);
+}
+
+label {
+    display: block;
+    font-size: var(--step-0);
+    font-weight: 700;
+    line-height: 1;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='tel'],
+input[type='email'],
+input[type='number'],
+input[type='datetime-local'],
+input[type='date'],
+select,
+textarea {
+    appearance: none;
+    background-color: white;
+    border: 0.06rem solid var(--color-grey-300);
+    color: var(--color-black);
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: var(--step--2);
+    width: 100%;
+}
+
+input[type='text'].is-invalid,
+input[type='password'].is-invalid,
+input[type='tel'].is-invalid,
+input[type='email'].is-invalid,
+input[type='number'].is-invalid,
+input[type='datetime-local'].is-invalid,
+input[type='date'].is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+    border-color: var(--color-negative);
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='tel']:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='datetime-local']:focus,
+input[type='date']:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-grey-500);
+}
