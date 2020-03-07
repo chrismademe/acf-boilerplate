@@ -1,0 +1,34 @@
+.page-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-footer__name {
+    color: var(--color-grey);
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+
+    svg {
+        width: 1.6em;
+        height: 1.6em;
+        margin-right: var(--size-2);
+    }
+
+    @media (hover: hover) {
+        span {
+            position: relative;
+        }
+
+        &:hover span:after {
+            background-color: var(--color-magenta);
+            content: '';
+            display: block;
+            height: 0.2rem;
+            position: absolute;
+            bottom: -0.2rem;
+            width: 100%;
+        }
+    }
+}

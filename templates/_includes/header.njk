@@ -5,6 +5,16 @@
         <a class="logo" href="/">
             <img src="/assets/images/logo.png" alt="ACF Boilerplate logo">
         </a>
+
+        <nav class="site-nav">
+            <ul>
+                {% for page in collections.siteNav %}
+                    <li>
+                        <a href="{{ page.url }}">{{ page.data.navTitle or page.data.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
     </div>
 </header>
 

@@ -10,16 +10,14 @@
 }
 
 .site-nav a {
-    color: var(--color-grey);
-    font-size: var(--step--1);
+    color: var(--color-white);
     text-decoration: none;
-    text-transform: uppercase;
     position: relative;
 
     @media (hover: hover) {
         &:hover:after {
-            border-bottom: 0.2rem solid var(--color-neutral);
-            content: "";
+            border-bottom: 0.2rem solid var(--color-magenta);
+            content: '';
             display: block;
             bottom: -0.4rem;
             position: absolute;
