@@ -10,7 +10,24 @@
         <title>{{ title }}</title>
         <meta name="description" content="{{ description }}">
 
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ title }}">
+        <meta name="twitter:description" content="{{ description }}">
+        <meta name="twitter:site" content="@underscoresdev">
+        <meta name="twitter:image:src" content="{{ site.url }}/assets/images/social.jpg">
+        <meta name="og:title" content="{{ title }}">
+        <meta name="og:description" content="{{ description }}">
+        <meta name="og:image" content="{{ site.url }}/assets/images/social.jpg">
+        <meta name="og:url" content="{{ site.url }}">
+        <meta name="og:site_name" content="{{ site.name }}">
+        <meta name="og:locale" content="en_GB">
+        <meta name="og:type" content="website">
+
         {% for id, href in site.stylesheets %}
+            <link id="{{ id }}-css" rel="stylesheet" href="{{ href }}">
+        {% endfor %}
+
+        {% for id, href in stylesheets %}
             <link id="{{ id }}-css" rel="stylesheet" href="{{ href }}">
         {% endfor %}
 

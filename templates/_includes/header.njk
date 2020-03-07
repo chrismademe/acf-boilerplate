@@ -8,11 +8,12 @@
 
         <nav class="site-nav">
             <ul>
-                {% for page in collections.siteNav %}
-                    <li>
-                        <a href="{{ page.url }}">{{ page.data.navTitle or page.data.title }}</a>
-                    </li>
-                {% endfor %}
+                <li>
+                    <a class="text-2" href="https://github.com/chrismademe/acf-boilerplate">
+                        {% include "icons/logo-github.svg" %}
+                        <span class="visually-hidden">Github</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -20,9 +21,10 @@
 
 <section class="hero">
     <div class="container">
-        <div class="flow flow--tight | max-w-short">
+        <div class="flow | max-w-short">
             <h1>Copy &amp; Paste field groups for Advanced Custom Fields</h1>
-            <p class="c-grey-700">You’ll need an <a class="weight-bold" href="https://www.advancedcustomfields.com/pro/">Advanced Custom Fields PRO</a> license to use some of these field groups. If you don’t have one already, it’s well worth it.</p>
+            <p>You’ll need an <a class="weight-bold" href="https://www.advancedcustomfields.com/pro/">Advanced Custom Fields PRO</a> license to use some of these field groups. If you don’t have one already, it’s well worth it.</p>
+            <p>👋 <em class="c-magenta">Heads up</em> This is still very much a work in progress and I'll be adding new field groups as I think of them. If you have any suggestons, <a href="https://twitter.com/underscoresdev">Twitter</a> is probably the best place to find me.</p>
             <a class="btn btn--teal | flow-space-4" href="/#main-content">Browse Field Groups</a>
         </div>
     </div>

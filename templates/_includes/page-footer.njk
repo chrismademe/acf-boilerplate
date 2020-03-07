@@ -6,7 +6,17 @@
     </a>
 </footer>
 
+<script>
+    document
+        .querySelectorAll('button[hidden]')
+        .forEach(btn => btn.removeAttribute('hidden'));
+</script>
+
 {% for id, src in site.scripts %}
+    <script id="{{ id }}-js" src="{{ src }}"></script>
+{% endfor %}
+
+{% for id, src in scripts %}
     <script id="{{ id }}-js" src="{{ src }}"></script>
 {% endfor %}
 

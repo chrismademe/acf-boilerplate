@@ -10,18 +10,10 @@
 }
 
 .site-nav a {
-    color: var(--color-white);
+    color: var(--color-teal-100);
     text-decoration: none;
-    position: relative;
 
     @media (hover: hover) {
-        &:hover:after {
-            border-bottom: 0.2rem solid var(--color-magenta);
-            content: '';
-            display: block;
-            bottom: -0.4rem;
-            position: absolute;
-            width: 1rem;
-        }
+        color: var(--color-white);
     }
 }

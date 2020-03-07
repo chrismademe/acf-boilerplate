@@ -1,35 +1,58 @@
 ---
 title: ACF Boilerplate | Field Group configurations for Advanced Custom Fields
+description: Copy & Paste boilerplate field groups for Advanced Custom Fields PRO
 navTitle: Home
 layout: default
 tags:
     - siteNav
+stylesheets:
+    prism: /assets/css/prism.css
 ---
+{% from "modal.njk" import modal as modal %}
 
 <main id="main-content" class="flow flow--tight | container" tabindex="-1">
 
     <div class="auto-grid">
-        <div class="card">
-            <div class="card__content">
-                <h4>Panels</h4>
-                <p>Repeater field for a common pattern of showing a grid of services or similar.</p>
-            </div>
-            <div class="card__actions">
-                <button class="btn btn--small | font-mono text--1">Get PHP</button>
-                <button class="btn btn--small | font-mono text--1">Get JSON</button>
-            </div>
-        </div>
+        {% for fieldGroup in fieldGroups %}
+            <div class="card">
+                {% if fieldGroup.hasPreviewImage %}
+                    <img class="card__image" src="/assets/images/field-group-previews/{{ fieldGroup.id }}.png" alt="Preview of {{ fieldGroup.title }} field group">
+                {% endif %}
+                <div class="card__content | flow flow--tight">
+                    <h4>{{ fieldGroup.title }}</h4>
+                    <p>{{ fieldGroup.description | safe }}</p>
 
-        <div class="card">
-            <div class="card__content">
-                <h4>Carousel</h4>
-                <p>Repeater field for a common pattern of showing a grid of services or similar.</p>
+                    {% set fields %}
+                    {% for field in fieldGroup.fields %}
+                        <code class="text--2">{{ field }}</code>
+                    {% endfor %}
+                    {% endset %}
+
+                    <p class="c-black flow-space-4 weight-bold">Fields</p>
+                    <p class="flow-space-1">{{ fields | safe }}</p>
+                </div>
+                <div class="card__actions">
+                    <button hidden data-micromodal-trigger="modal-{{ fieldGroup.id }}-php" class="btn btn--teal btn--small | font-mono text--1">Get PHP</button>
+                    <button hidden data-micromodal-trigger="modal-{{ fieldGroup.id }}-json" class="btn btn--magenta btn--small | font-mono text--1">Get JSON</button>
+                </div>
             </div>
-            <div class="card__actions">
-                <button class="btn btn--small | font-mono text--1">Get PHP</button>
-                <button class="btn btn--small | font-mono text--1">Get JSON</button>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 
 </main>
+
+{% for fieldGroup in fieldGroups %}
+    {{ modal({
+        id: fieldGroup.id,
+        title: fieldGroup.title,
+        description: "Copy the PHP below into your theme's <code>functions.php</code>.",
+        type: 'php'
+    }) }}
+
+    {{ modal({
+        id: fieldGroup.id,
+        title: fieldGroup.title,
+        description: "Copy the JSON below into a directory called <code>acf-json</code> inside your theme.",
+        type: 'json'
+    }) }}
+{% endfor %}
