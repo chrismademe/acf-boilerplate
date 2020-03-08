@@ -12,23 +12,14 @@ module.exports = eleventyConfig => {
         const dom = new JSDOM(content);
         const document = dom.window.document;
 
-        // Only run on index
-        // if (outputPath !== '/') return content;
-
         // Get code blocks
         let codeBlocks = document.querySelectorAll('pre code');
 
         codeBlocks.forEach(block => {
             let code = block.innerHTML;
-            let language = block.getAttribute('[data-language]');
-            let prismLanguage =
-                Prism.languages[language] || Prism.languages.autoit;
-
-            let highlightedCode = Prism.highlight(
-                unescape(code),
-                prismLanguage
-            );
-
+            let type = block.getAttribute('[data-type]');
+            let language = Prism.languages[type] || Prism.languages.autoit;
+            let highlightedCode = Prism.highlight(unescape(code), language);
             block.innerHTML = highlightedCode;
         });
 

@@ -9,7 +9,7 @@
                 <div class="modal__content" id="modal-{{ _.id }}-{{ _.type }}-content">
                     <p>{{ _.description | safe }}</p>
                     {% set filePath = "field-groups/" ~ _.type ~ "/" ~ _.id ~ "." ~ _.type %}
-                    <pre class="modal__code | language-{{ _.type }}"><code data-language="{{ _.type }}" class="language-{{ _.type }}" id="modal-{{ _.id }}-{{ _.type }}-code">{% include filePath %}</code></pre>
+                    <pre class="modal__code | language-{{ _.type }}"><code data-type="{{ _.type }}" class="language-{{ _.type }}" id="modal-{{ _.id }}-{{ _.type }}-code">{% include filePath %}</code></pre>
                 </div>
                 <footer class="modal__footer">
                     <copy-button data-target="#modal-{{ _.id }}-{{ _.type }}-code">
