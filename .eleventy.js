@@ -1,24 +1,31 @@
 const jsdom = require('jsdom');
+const Prism = require('node-prismjs');
 const { JSDOM } = jsdom;
 
 module.exports = eleventyConfig => {
     eleventyConfig.addPassthroughCopy('robots.txt');
     eleventyConfig.addPassthroughCopy('assets');
 
-    // Configure Markdown
-    let md = require('markdown-it');
-    let mdPrism = require('markdown-it-prism');
-    let options = { html: true };
-    eleventyConfig.setLibrary('md', md(options).use(mdPrism));
-
     // Transforms
-    eleventyConfig.addTransform('transformHeadings', (content, outputPath) => {
+    eleventyConfig.addTransform('syntaxHighlight', (content, outputPath) => {
         const dom = new JSDOM(content);
+        const document = dom.window.document;
 
-        // Find all headings
-        let headings = dom.window.document.querySelectorAll('h2, h3');
-        headings.forEach(heading => {
-            heading.classList.add('flow-space-8');
+        // Only run on index
+        // if (outputPath !== '/') return content;
+
+        // Get code blocks
+        let codeBlocks = document.querySelectorAll('pre code');
+
+        codeBlocks.forEach(block => {
+            let code = block.innerHTML;
+            let language = block.getAttribute('[data-language]');
+            let prismLanguage =
+                Prism.languages[language] || Prism.languages.autoit;
+
+            let highlightedCode = Prism.highlight(code, prismLanguage);
+
+            block.innerHTML = highlightedCode;
         });
 
         return dom.serialize();

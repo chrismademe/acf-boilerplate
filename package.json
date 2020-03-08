@@ -22,6 +22,7 @@
         "gulp-sass-glob": "^1.1.0",
         "jsdom": "^16.2.0",
         "markdown-it-prism": "^2.0.4",
+        "node-prismjs": "^0.1.2",
         "postcss": "^7.0.26",
         "postcss-logical": "^4.0.2"
     }
