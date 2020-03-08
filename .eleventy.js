@@ -1,5 +1,6 @@
 const jsdom = require('jsdom');
 const Prism = require('node-prismjs');
+const unescape = require('unescape');
 const { JSDOM } = jsdom;
 
 module.exports = eleventyConfig => {
@@ -23,7 +24,10 @@ module.exports = eleventyConfig => {
             let prismLanguage =
                 Prism.languages[language] || Prism.languages.autoit;
 
-            let highlightedCode = Prism.highlight(code, prismLanguage);
+            let highlightedCode = Prism.highlight(
+                unescape(code),
+                prismLanguage
+            );
 
             block.innerHTML = highlightedCode;
         });

@@ -24,6 +24,7 @@
         "markdown-it-prism": "^2.0.4",
         "node-prismjs": "^0.1.2",
         "postcss": "^7.0.26",
-        "postcss-logical": "^4.0.2"
+        "postcss-logical": "^4.0.2",
+        "unescape": "^1.0.1"
     }
 }
