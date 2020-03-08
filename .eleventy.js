@@ -11,6 +11,7 @@ module.exports = eleventyConfig => {
     eleventyConfig.addTransform('syntaxHighlight', (content, outputPath) => {
         const dom = new JSDOM(content);
         const document = dom.window.document;
+        let { languages, highlight } = Prism;
 
         // Get code blocks
         let codeBlocks = document.querySelectorAll('pre code');
@@ -18,8 +19,8 @@ module.exports = eleventyConfig => {
         codeBlocks.forEach(block => {
             let code = block.innerHTML;
             let type = block.getAttribute('[data-type]');
-            let language = Prism.languages[type] || Prism.languages.autoit;
-            let highlightedCode = Prism.highlight(unescape(code), language);
+            let language = languages[type] || languages.autoit;
+            let highlightedCode = highlight(unescape(code), language);
             block.innerHTML = highlightedCode;
         });
 
