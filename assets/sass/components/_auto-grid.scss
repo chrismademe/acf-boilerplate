@@ -1,7 +1,7 @@
 .auto-grid {
-    --auto-grid-gap: var(--size-4);
+    --auto-grid-gap: var(--size-5);
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
     grid-gap: var(--auto-grid-gap);
 }

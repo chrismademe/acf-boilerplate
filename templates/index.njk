@@ -20,7 +20,7 @@ stylesheets:
                 {% endif %}
                 <div class="card__content | flow flow--tight">
                     <h4>{{ fieldGroup.title }}</h4>
-                    <p>{{ fieldGroup.description | safe }}</p>
+                    <p class="text--1">{{ fieldGroup.description | safe }}</p>
 
                     {% set fields %}
                     {% for field in fieldGroup.fields %}
@@ -28,8 +28,10 @@ stylesheets:
                     {% endfor %}
                     {% endset %}
 
-                    <p class="c-black flow-space-4 weight-bold">Fields</p>
-                    <p class="flow-space-1">{{ fields | safe }}</p>
+                    <div class="flow-space-4">
+                        <p class="c-black weight-bold">Fields</p>
+                        <p class="flow-space-1">{{ fields | safe }}</p>
+                    </div>
                 </div>
                 <div class="card__actions">
                     <button hidden data-micromodal-trigger="modal-{{ fieldGroup.id }}-php" class="btn btn--teal btn--small | font-mono text--1">Get PHP</button>
