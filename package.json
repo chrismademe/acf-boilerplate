@@ -10,7 +10,7 @@
     "author": "Chris Galbraith",
     "license": "ISC",
     "devDependencies": {
-        "@11ty/eleventy": "^0.10.0",
+        "@11ty/eleventy": "^1.0.2",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",
         "gulp-cssnano": "^2.1.3",
